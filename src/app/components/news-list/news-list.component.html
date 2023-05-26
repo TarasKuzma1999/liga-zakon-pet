@@ -1,0 +1,16 @@
+<div class="news-list">
+  <div
+    class="news-item"
+    *ngFor="let news of newsList"
+    (click)="navigateToNewsItem(news.ID)"
+  >
+    <div class="news-image">
+      <img [src]="news.image" alt="News Image" />
+    </div>
+    <div class="news-content">
+      <h2 class="news-title">{{ news.title }}</h2>
+      <p class="news-description">{{ news.description }}</p>
+      <a class="read-more" [href]="news.link">Read More</a>
+    </div>
+  </div>
+</div>

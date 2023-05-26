@@ -13,9 +13,8 @@ export class SliderComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getData().subscribe((data) => {
-      console.log(data);
-      this.latestNews = data.slice(0, 3);
+    this.dataService.getLastThreeNews().subscribe((data) => {
+      this.latestNews = data;
     });
   }
 }
