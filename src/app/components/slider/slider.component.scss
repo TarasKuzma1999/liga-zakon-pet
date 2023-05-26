@@ -1,0 +1,71 @@
+/* Стилі слайдера */
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .slide {
+      text-align: center;
+      padding: 20px;
+  
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+  
+      p {
+        font-size: 16px;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 30px;
+      height: 30px;
+      background-color: #007bff;
+      border-radius: 50%;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+  
+      &:hover {
+        opacity: 1;
+      }
+  
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  
+    .carousel-indicators {
+      li {
+        background-color: #007bff;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        border: none;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+  
+        &.active {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  
