@@ -1,1 +1,23 @@
-<p>add-news works!</p>
+<form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Заголовок</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      formControlName="title"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Опис</label>
+    <textarea
+      class="form-control"
+      id="description"
+      formControlName="description"
+      required
+    ></textarea>
+  </div>
+  <!-- Додайте інші поля форми для новини -->
+  <button type="submit" class="btn btn-primary">Додати новину</button>
+</form>

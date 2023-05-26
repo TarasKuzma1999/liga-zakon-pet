@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ImagePaths } from 'src/app/enums/image-paths.enum';
 import { News } from 'src/app/interfaces/news.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -9,6 +10,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SliderComponent {
   latestNews: News[] = [];
+  readonly defaultImagePath: string = ImagePaths.DefaultImage;
+
 
   constructor(private dataService: DataService) {}
 

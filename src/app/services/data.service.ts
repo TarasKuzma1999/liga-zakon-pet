@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { News } from '../interfaces/news.interface';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
@@ -43,8 +44,22 @@ export class DataService {
 
   addNews(news: News): void {
     this.newsListSubject.pipe(take(1)).subscribe((newsList: News[]) => {
-      const updatedNewsList = [...newsList, news];
+      const newNews: News = {
+        ...news,
+        ID: this.generateUniqueId(newsList),
+      };
+
+      const updatedNewsList = [...newsList, newNews];
       this.newsListSubject.next(updatedNewsList);
     });
+  }
+
+  private generateUniqueId(newsList: News[]): string {
+    let id: string;
+    do {
+      id = Math.floor(Math.random() * 1000000).toString();
+    } while (newsList.some((news) => news.ID === id));
+
+    return id;
   }
 }

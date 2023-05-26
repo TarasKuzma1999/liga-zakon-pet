@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { News } from 'src/app/interfaces/news.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -13,6 +13,7 @@ export class NewsItemComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private dataService: DataService
   ) {}
 
@@ -23,5 +24,9 @@ export class NewsItemComponent implements OnInit {
         this.news = news;
       });
     });
+  }
+
+  goBack(): void {
+    this.router.navigate(['/news']);
   }
 }
