@@ -18,7 +18,6 @@ export class AddNewsComponent implements OnInit {
     this.newsForm = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      // Додайте інші поля форми, які потрібні для новини
     });
   }
 
@@ -27,11 +26,12 @@ export class AddNewsComponent implements OnInit {
   onSubmit(): void {
     if (this.newsForm.valid) {
       const newNews: News = {
-        ID: '', // Згенеруйте унікальний ID для нової новини
+        ID: '',
         title: this.newsForm.value.title,
         description: this.newsForm.value.description,
         date: new Date().toISOString(),
-        // Заповніть решту полів новини з форми
+        commentsCount: 0,
+        viewCount: 0,
       };
 
       this.dataService.addNews(newNews);

@@ -49,7 +49,7 @@ export class DataService {
         ID: this.generateUniqueId(newsList),
       };
 
-      const updatedNewsList = [...newsList, newNews];
+      const updatedNewsList = [newNews, ...newsList];
       this.newsListSubject.next(updatedNewsList);
     });
   }

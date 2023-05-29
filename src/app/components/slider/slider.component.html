@@ -1,10 +1,11 @@
-<ngb-carousel>
-  <ng-template ngbSlide *ngFor="let news of latestNews">
-    <div class="slide">
-      <h2>{{ news.title }}</h2>
-      <p>{{ news.description }}</p>
-      <img [src]="news.image || defaultImagePath" alt="News Image" />
-      <a [href]="news.link">Read More</a>
-    </div>
-  </ng-template>
-</ngb-carousel>
+<div class="news-carousel">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let news of latestNews">
+      <div class="slide">
+        <h2>{{ news.title }}</h2>
+        <p>{{ news.description }}</p>
+        <img [src]="news.image || defaultImagePath" alt="News Image" />
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

@@ -5,8 +5,8 @@ export interface News {
   date: string;
   link?: string;
   isTop?: boolean;
-  commentsCount?: number;
-  viewCount?: number;
+  commentsCount: number;
+  viewCount: number;
   tags?: Tag[];
   image?: string;
   imageSource?: string;
